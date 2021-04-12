@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
-  purge: ["./*.html", "./*.js"],
+  mode: "jit",
+  purge: ["./dist/**/*.html", "./src/**/*.{js}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     // screens: {
@@ -49,6 +50,7 @@ module.exports = {
       blip: "#56CCF2",
       whatsapp: "#6FCF97",
       facebook: "#2F80ED",
+      marker: "#ff67ff",
     },
     extend: {},
   },
