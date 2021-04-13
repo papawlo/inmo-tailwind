@@ -618,6 +618,9 @@ video {
 		max-width: 1536px;
 	}
 }
+.pointer-events-none {
+	pointer-events: none;
+}
 .absolute {
 	position: absolute;
 }
@@ -630,11 +633,11 @@ video {
 	bottom: 0px;
 	left: 0px;
 }
+.z-20 {
+	z-index: 20;
+}
 .z-10 {
 	z-index: 10;
-}
-.m-0 {
-	margin: 0px;
 }
 .mx-auto {
 	margin-left: auto;
@@ -643,9 +646,6 @@ video {
 .my-12 {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
-}
-.mt-20 {
-	margin-top: 5rem;
 }
 .-mr-96 {
 	margin-right: -24rem;
@@ -857,13 +857,12 @@ video {
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 }
-.py-24 {
-	padding-top: 6rem;
-	padding-bottom: 6rem;
-}
 .py-16 {
 	padding-top: 4rem;
 	padding-bottom: 4rem;
+}
+.pt-20 {
+	padding-top: 5rem;
 }
 .pt-16 {
 	padding-top: 4rem;
@@ -964,6 +963,11 @@ video {
 .outline-none {
 	outline: 2px solid transparent;
 	outline-offset: 2px;
+}
+.transition-opacity {
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
 }
 .transition-all {
 	transition-property: all;
@@ -1107,10 +1111,6 @@ video {
 
 @media (min-width: 640px) {
 
-	.sm\:relative {
-		position: relative;
-	}
-
 	.sm\:w-1\/2 {
 		width: 50%;
 	}
@@ -1126,12 +1126,23 @@ video {
 
 @media (min-width: 768px) {
 
+	.md\:pointer-events-auto {
+		pointer-events: auto;
+	}
+
 	.md\:relative {
 		position: relative;
 	}
 
 	.md\:absolute {
 		position: absolute;
+	}
+
+	.md\:inset-auto {
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
 	}
 
 	.md\:right-0 {
@@ -1146,14 +1157,13 @@ video {
 		margin: 0px;
 	}
 
-	.md\:-mx-4 {
-		margin-left: -1rem;
-		margin-right: -1rem;
-	}
-
 	.md\:mx-4 {
 		margin-left: 1rem;
 		margin-right: 1rem;
+	}
+
+	.md\:-mr-0 {
+		margin-right: 0px;
 	}
 
 	.md\:mt-10 {
@@ -1196,8 +1206,8 @@ video {
 		width: 25%;
 	}
 
-	.md\:w-2\/3 {
-		width: 66.666667%;
+	.md\:w-3\/5 {
+		width: 60%;
 	}
 
 	.md\:items-end {
@@ -1206,6 +1216,10 @@ video {
 
 	.md\:justify-end {
 		justify-content: flex-end;
+	}
+
+	.md\:overflow-auto {
+		overflow: auto;
 	}
 
 	.md\:bg-transparent {

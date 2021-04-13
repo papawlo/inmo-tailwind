@@ -19,11 +19,11 @@
     <section id="inicio" class="bg-gradient-primary min-h-screen flex flex-col">
       <header class="header">
         <div class="mx-auto container max-w-full px-4">
-          <div class="sm:relative py-6 flex justify-between items-center">
+          <div class="py-6 flex justify-between items-center">
             <a href="./" class="logo">
               <img src="./img/logo.png" alt="logo" />
             </a>
-            <div class="md:hidden">
+            <div class="md:hidden z-20">
               <button
                 id="primary-menu-toggle"
                 class="hamburger outline-none"
@@ -37,10 +37,10 @@
 
             <nav
               id="primary-menu"
-              class="hidden overflow-hidden mt-20 opacity-0 inset-0 z-10 bg-gray-darker bg-opacity-90 absolute md:relative md:opacity-100 md:h-auto md:w-auto md:m-0 md:p-0 md:flex md:bg-transparent"
+              class="pointer-events-none md:pointer-events-auto inset-0 opacity-0 z-10 overflow-hidden md:overflow-auto bg-gray-darker bg-opacity-90 absolute md:relative md:inset-auto md:opacity-100 md:h-auto md:w-auto md:m-0 md:p-0 md:flex md:bg-transparent transition-opacity ease-in-out duration-250"
             >
               <ul
-                class="menu -mr-96 p-4 md:flex md:-mx-4 transition-all transform ease-in-out delay-300 duration-300"
+                class="menu -mr-96 p-4 pt-20 md:flex md:-mr-0 md:p-0 transition-all transform ease-in-out delay-300 duration-300"
               >
                 <li class="py-4 text-right md:p-0">
                   <a
@@ -252,7 +252,7 @@
     <section id="para-quem" class="bg-primary-light relative py-8">
       <div class="container max-w-6xl mx-auto">
         <div class="flex flex-wrap">
-          <div class="w-full md:w-2/3 p-6 py-24">
+          <div class="w-full md:w-3/5 p-6">
             <h2 class="font-bold text-white text-4xl leading-tight">
               PARA QUEM A INMO É INDICADA?
             </h2>
@@ -448,18 +448,20 @@
       menuToggle.addEventListener("click", function (e) {
         e.preventDefault();
         this.classList.toggle("is-active");
-        mainNavigation.classList.toggle("hidden");
+        // mainNavigation.classList.toggle("hidden");
+        mainNavigation.classList.toggle("pointer-events-none");
         mainNavigation.classList.toggle("opacity-0");
-        setTimeout(function () {
-          mainNavigation.querySelector(".menu").classList.toggle("-mr-96");
-        }, 250);
+        mainNavigation.querySelector(".menu").classList.toggle("-mr-96");
+        // setTimeout(function () {
+        // }, 250);
       });
 
       const menuItems = document.querySelectorAll(".menu-item");
       for (let i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener("click", function (e) {
           menuToggle.classList.toggle("is-active");
-          mainNavigation.classList.toggle("hidden");
+          // mainNavigation.classList.toggle("hidden");
+          mainNavigation.classList.toggle("pointer-events-none");
           mainNavigation.classList.toggle("opacity-0");
           mainNavigation.querySelector(".menu").classList.toggle("-mr-96");
         });
