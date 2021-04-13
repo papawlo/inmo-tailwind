@@ -1,0 +1,19 @@
+{
+  "name": "inmo",
+  "version": "1.0.0",
+  "description": "INMO",
+  "main": "index.js",
+  "scripts": {
+    "watch": "postcss css/tailwind.css -o style.css",
+    "build:css": "tailwind build ./src/style.scss -o ./dist/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.9",
+    "tailwindcss": "^2.1.1"
+  },
+  "dependencies": {}
+}
